@@ -1,21 +1,24 @@
-# DiffArtist: Towards Aesthetic-Aligned Diffusion Model Control for Training-free Text-Driven Stylization
+# DiffArtist: Towards Structure and Appearance Controllable Image Stylization
 ## [Webpage](https://DiffusionArtist.github.io)| [arXiv](https://arxiv.org/abs/2407.15842) | [HuggingFace Demo](https://huggingface.co/spaces/fffiloni/Artist)
-Official repo for Artist: Aesthetically Controllable Text-Driven Stylization without Training
-![fig_teaser_large-min](https://github.com/user-attachments/assets/6da1a3e1-aeb7-4fb6-9dfa-9f84c27a7975)
+Official repo for DiffArtist: Towards Structure and Appearance Controllable Image Stylization
+
+![fig_supp_control_cmp_2](https://github.com/user-attachments/assets/3c62267e-3ac5-4afd-800f-bd084484ffd1)
 
 ## What is DiffArtist?
-_DiffArtist_ is a training-free text-driven image stylization method. You give an image and input a prompt describing the desired style, _Artist_ give you the stylized image in that style. The detail of the original image and the style you provide is harmonically integrated. 
+_DiffArtist_ is a training-free text-driven image stylization method that stylize in both structure and appearance. You give an image and input a prompt describing the desired style, _DiffArtist_ give you the stylized image in that style. The semantics of the original image and the style is harmonically integrated with the style, and you can easily control the structure and appearance-level style strength.
 
 **No** need to train, **no** need to download any ControNets or LoRAs. Just use a pretrained Stable Diffusion.
 
 ## Update
-:fire:Dec 24. Updated paper, added more comparisons and analysis.
+:fire:Apr 23, 2025. Updated paper, added more comparisons and analysis for the dual controllability in structure and appearance.
 
-:fire:Sep 21. Add config file for playground-v2 (experimental).  
+:fire:Dec 24, 2024. Updated paper, added more comparisons and analysis.
 
-:fire:Jul 22. The paper and inference code is released.  
+:fire:Sep 21, 2024. Add config file for playground-v2 (experimental).  
 
-:fire:Jul 30. Updated [huggingface demo](https://huggingface.co/spaces/fffiloni/Artist), thanks for `fffiloni`!
+:fire:Jul 22, 2024. The paper and inference code is released.  
+
+:fire:Jul 30, 2024. Updated [huggingface demo](https://huggingface.co/spaces/fffiloni/Artist), thanks for `fffiloni`!
 
 ## Guide
 Clone the repository:
@@ -55,8 +58,8 @@ Aside from the Stable Diffusino model 2.1, we now provide a config file for the 
 
 ## Citation
 ```
-@misc{jiang2024artist,
-      title={Artist: Aesthetically Controllable Text-Driven Stylization without Training},
+@misc{jiang2024diffartist,
+      title={DiffArtist: Towards Structure and Appearance Controllable Image Stylization},
       author={Ruixiang Jiang and Changwen Chen},
       year={2024},
       eprint={2407.15842},
