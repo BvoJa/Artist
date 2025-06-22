@@ -57,6 +57,7 @@ Aside from the Stable Diffusino model 2.1, we now provide a config file for the 
 
 
 ## Citation
+If you find this repo useful, please consider cite it as this updated version, (the older title was Artist: Aesthetically controllable text-driven stylization without training)
 ```
 @misc{jiang2024diffartist,
       title={DiffArtist: Towards Structure and Appearance Controllable Image Stylization},
