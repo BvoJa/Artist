@@ -10,6 +10,8 @@ _DiffArtist_ is a training-free text-driven image stylization method that styliz
 **No** need to train, **no** need to download any ControNets or LoRAs. Just use a pretrained Stable Diffusion.
 
 ## Update
+:fire:Jul 05, 2025. DiffArtist is accepted to ACM MM 2025!
+
 :fire:Apr 23, 2025. Updated paper, added more comparisons and analysis for the dual controllability in structure and appearance.
 
 :fire:Dec 24, 2024. Updated paper, added more comparisons and analysis.
