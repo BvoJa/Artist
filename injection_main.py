@@ -500,7 +500,7 @@ if __name__ == "__main__":
     # Load a pipeline
     if cfg.model == "sd":
         pipe = StableDiffusionPipeline.from_pretrained(
-            "stabilityai/stable-diffusion-2-1-base"
+            "Manojb/stable-diffusion-2-1-base"
         ).to(device)
     elif cfg.model == "playground":
         pipe = DiffusionPipeline.from_pretrained(
