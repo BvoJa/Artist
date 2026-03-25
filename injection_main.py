@@ -469,7 +469,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Stable Diffusion with OmegaConf")
     parser.add_argument(
-        "--config", type=str, default="config.yaml", help="Path to the config file"
+        "--config", type=str, default="example_config.yaml", help="Path to the config file"
     )
     parser.add_argument(
         "--mode",
