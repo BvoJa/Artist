@@ -1,9 +1,7 @@
-clip==1.0
+git+https://github.com/openai/CLIP.git
 diffusers==0.26.3
 einops==0.8.0
 gradio==4.39.0
-matplotlib==3.5.2
-numpy==1.22.4
 omegaconf==2.3.0
 Pillow==10.4.0
 Requests==2.32.3
