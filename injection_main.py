@@ -742,4 +742,4 @@ if __name__ == "__main__":
             title="Artist Interactive Demo",
             examples=examples,
         )
-        app.launch(share=True)
+        app.queue().launch(share=True)
