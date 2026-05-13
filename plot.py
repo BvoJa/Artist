@@ -139,17 +139,34 @@ class ResBlockFeatureCollector:
 
 
 def _load_pipe(cfg):
+    hf_token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGINGFACE_TOKEN")
     if cfg.model == "sd":
-        pipe = StableDiffusionPipeline.from_pretrained(
-            "stabilityai/stable-diffusion-2-1-base"
-        ).to(device)
+        model_id = os.environ.get(
+            "HF_MODEL_ID", cfg.get("model_id", "Manojb/stable-diffusion-2-1-base")
+        )
+        try:
+            pipe = StableDiffusionPipeline.from_pretrained(
+                model_id,
+                token=hf_token,
+            ).to(device)
+        except OSError as exc:
+            raise OSError(
+                f"Could not load Stable Diffusion model {model_id!r}. "
+                "If this is a gated Hugging Face repo, accept its license and set "
+                "HF_TOKEN/HUGGINGFACE_TOKEN, or set model_id in the config to a "
+                "local model directory or accessible repo."
+            ) from exc
     elif cfg.model == "playground":
+        model_id = os.environ.get(
+            "HF_MODEL_ID", cfg.get("model_id", "playgroundai/playground-v2-1024px-aesthetic")
+        )
         pipe = DiffusionPipeline.from_pretrained(
-            "playgroundai/playground-v2-1024px-aesthetic",
+            model_id,
             torch_dtype=torch.float16,
             use_safetensors=True,
             add_watermarker=False,
             variant="fp16",
+            token=hf_token,
         ).to(device)
     else:
         raise ValueError(f"Unknown model type: {cfg.model}")

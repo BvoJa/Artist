@@ -14,7 +14,11 @@ import torch.nn as nn
 from torch.nn import functional as nnf
 from diffusers.models import attention_processor
 import einops
-from diffusers.models import unet_2d_condition, attention, transformer_2d, resnet
+try:
+    from diffusers.models.unets import unet_2d_condition
+except ImportError:
+    from diffusers.models import unet_2d_condition
+from diffusers.models import attention, resnet
 from diffusers.models.unets import unet_2d_blocks
 
 # from diffusers.models.unet_2d import CrossAttnUpBlock2D
@@ -137,7 +141,7 @@ class ArtistAttentionProcessor(DefaultAttentionProcessor):
 
     def __call__(
         self,
-        attn: Attention,
+        attn: attention_processor.Attention,
         hidden_states: torch.FloatTensor,
         encoder_hidden_states: Optional[torch.FloatTensor] = None,
         attention_mask: Optional[torch.FloatTensor] = None,
@@ -392,7 +396,7 @@ def register_attention_processors(
     layer_idx_resnet = 0
     for block in up_blocks:
         # each block should have 3 transformer layer
-        #  transformer_layer : transformer_2d.Transformer2DModel
+        #  transformer_layer : Transformer2DModel
         if share_resblock:
             if share_resnet_layers is not None:
                 resnet_wrappers = []
