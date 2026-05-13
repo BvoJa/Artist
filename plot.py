@@ -8,8 +8,8 @@ The script captures, for selected ResNet blocks in the U-Net up path:
 Example:
     python plot.py \
         --config example_config.yaml \
-        --image_dir data/example/1.png \
-        --layers 0 1 2 3 \1
+        --image_dir data/example/2.png \
+        --layers 0 1 2 3 \
         --out_dir out/tsne
 """
 
